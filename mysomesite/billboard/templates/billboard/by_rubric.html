@@ -1,0 +1,14 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}{{ current_rubric.name }}{% endblock %}
+
+{% block content %}
+    <h1>Рубрика: {{ current_rubric.name }}</h1>
+    {% for adv in advs %}
+        <div>
+            <h2>{{ adv.title }}</h2>
+            <p>{{ adv.content }}</p>
+            <p>{{ adv.published|date:"d.m.Y H:i:s" }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
